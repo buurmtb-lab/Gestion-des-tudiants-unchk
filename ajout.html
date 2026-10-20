@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un étudiant | UNCHK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="barre-laterale">
+
+        <div class="logo">
+            <div class="icone-logo">🎓</div>
+            <div>
+                <strong>UNCHK</strong>
+                <span>Administration</span>
+            </div>
+        </div>
+
+        <button type="button" class="bouton-theme" aria-pressed="false">
+            🌙 Mode sombre
+        </button>
+
+        <nav class="menu">
+
+            <a href="index.html" class="lien-menu">
+                <span>📉</span>
+                Tableau de bord
+            </a>
+
+            <a href="ajout.html" class="lien-menu actif" aria-current="page">
+                <span>➕</span>
+                Ajouter étudiant
+            </a>
+
+            <a href="liste.html" class="lien-menu">
+                <span>👨‍🎓</span>
+                Étudiants
+            </a>
+            <a href="classe.html" class="lien-menu">
+                <span>📊</span>
+                Statistiques
+            </a>
+            <a href="https://telly-tech.com/" class="lien-menu">
+                <span>🌐</span>
+                Telly Tech
+            </a>
+
+        </nav>
+
+        <div class="bas-barre">
+            <p>Gestion des étudiants</p>
+            <small>© 2026 UNCHK</small>
+        </div>
+
+    </aside>
+
+    <div class="contenu-principal">
+
+
+        <header class="en-tete">
+
+            <div>
+                <span class="etiquette-page">ESPACE ADMINISTRATION</span>
+
+                <h1>Gestion des étudiants</h1>
+
+                <p>
+                    Gérez les inscriptions et suivez les résultats des étudiants.
+                </p>
+            </div>
+
+            <div class="profil">
+                <div class="icone-profil">👩🏽‍💻</div>
+
+                <div>
+                    <strong>Administrateur</strong>
+                    <span>UNCHK</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <main class="conteneur">
+
+
+            
+
+
+            <section class="carte-contenu" id="ajouter">
+
+                <div class="titre-carte">
+
+                    <div class="icone-titre">
+                        ➕
+                    </div>
+
+                    <div>
+                        <h2>Ajouter un étudiant</h2>
+                        <p>
+                            Remplissez les informations ci-dessous pour enregistrer un étudiant.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="form-etudiant">
+
+                    <div class="grille-formulaire">
+
+                        <div class="champ-formulaire">
+
+                            <label for="nom">
+                                Nom
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nom"
+                                name="nom"
+                                placeholder="Ex. : Badiane"
+                            >
+
+                        </div>
+
+
+                        <div class="champ-formulaire">
+
+                            <label for="prenom">
+                                Prénom
+                            </label>
+
+                            <input
+                                type="text"
+                                id="prenom"
+                                name="prenom"
+                                placeholder="Ex. : Moustapha"
+                            >
+
+                        </div>
+
+
+                        <div class="champ-formulaire">
+
+                            <label for="email">
+                                Adresse e-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Ex. : moustapha@example.com"
+                            >
+
+                        </div>
+
+
+                        <div class="champ-formulaire">
+
+                            <label for="classe">
+                                Classe
+                            </label>
+
+                            <input
+                                type="text"
+                                id="classe"
+                                name="classe"
+                                placeholder="Ex. : L1 Informatique"
+                            >
+
+                        </div>
+
+
+                        <div class="champ-formulaire champ-note">
+
+                            <label for="note">
+                                Note sur 20
+                            </label>
+
+                            <input
+                                type="number"
+                                id="note"
+                                name="note"
+                                min="0"
+                                max="20"
+                                step="0.5"
+                                placeholder="Ex. : 15.5"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="form-message" class="message-formulaire"></div>
+
+
+                    <div class="actions-formulaire">
+
+                        <button
+                            type="submit"
+                            class="bouton bouton-principal"
+                        >
+                            ➕ Ajouter l'étudiant
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="btn-annuler-modif"
+                            class="bouton bouton-secondaire cache"
+                        >
+                            Annuler la modification
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>

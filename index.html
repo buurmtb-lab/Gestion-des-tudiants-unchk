@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des étudiants UNCHK</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="barre-laterale">
+
+        <div class="logo">
+            <div class="icone-logo">🎓</div>
+            <div>
+                <strong>UNCHK</strong>
+                <span>Administration</span>
+            </div>
+        </div>
+
+        <button type="button" class="bouton-theme" aria-pressed="false">
+            🌙 Mode sombre
+        </button>
+
+        <nav class="menu">
+
+            <a href="index.html" class="lien-menu actif" aria-current="page">
+                <span>📉</span>
+                Tableau de bord
+            </a>
+
+            <a href="ajout.html" class="lien-menu">
+                <span>➕</span>
+                Ajouter étudiant
+            </a>
+
+            <a href="liste.html" class="lien-menu">
+                <span>👨‍🎓</span>
+                Étudiants
+            </a>
+            <a href="classe.html" class="lien-menu">
+                <span>📊</span>
+                Statistiques
+            </a>
+            <a href="https://telly-tech.com/" class="lien-menu">
+                <span>🌐</span>
+                Telly Tech
+            </a>
+
+        </nav>
+
+        <div class="bas-barre">
+            <p>Gestion des étudiants</p>
+            <small>© 2026 UNCHK</small>
+        </div>
+
+    </aside>
+
+    <div class="contenu-principal">
+
+
+        <header class="en-tete">
+
+            <div>
+                <span class="etiquette-page">ESPACE ADMINISTRATION</span>
+
+                <h1>Gestion des étudiants</h1>
+
+                <p>
+                    Gérez les inscriptions et suivez les résultats des étudiants.
+                </p>
+            </div>
+
+            <div class="profil">
+                <div class="icone-profil">👩🏽‍💻</div>
+
+                <div>
+                    <strong>Administrateur</strong>
+                    <span>UNCHK</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <main class="conteneur">
+
+
+            <section class="section-stats">
+
+                <div class="titre-section">
+                    <div>
+                        <h2>Vue d'ensemble</h2>
+                        <p>Résumé des étudiants enregistrés.</p>
+                    </div>
+                </div>
+
+
+                <div class="grille-stats">
+
+                    <div class="carte-stat">
+
+                        <div class="icone-stat icone-bleue">
+                            👨‍🎓
+                        </div>
+
+                        <div class="contenu-stat">
+                            <span>Total étudiants</span>
+                            <strong id="total-etudiants">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="carte-stat">
+
+                        <div class="icone-stat icone-violette">
+                            📈
+                        </div>
+
+                        <div class="contenu-stat">
+                            <span>Moyenne générale</span>
+                            <strong id="moyenne-generale">0,00/20</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="carte-stat">
+
+                        <div class="icone-stat icone-verte">
+                            ✅
+                        </div>
+
+                        <div class="contenu-stat">
+                            <span>Étudiants admis</span>
+                            <strong id="etudiants-admis">0</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+        <footer>
+            <p>
+                © 2026 — Application de gestion des étudiants UNCHK
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

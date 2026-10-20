@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques | UNCHK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="barre-laterale">
+
+        <div class="logo">
+            <div class="icone-logo">🎓</div>
+            <div>
+                <strong>UNCHK</strong>
+                <span>Administration</span>
+            </div>
+        </div>
+
+        <button type="button" class="bouton-theme" aria-pressed="false">
+            🌙 Mode sombre
+        </button>
+
+        <nav class="menu">
+            <a href="index.html" class="lien-menu">
+                <span>📉</span>
+                Tableau de bord
+            </a>
+            <a href="ajout.html" class="lien-menu">
+                <span>➕</span>
+                Ajouter étudiant
+            </a>
+            <a href="liste.html" class="lien-menu">
+                <span>👨‍🎓</span>
+                Étudiants
+            </a>
+            <a href="classe.html" class="lien-menu actif" aria-current="page">
+                <span>📊</span>
+                Statistiques
+            </a>
+            <a href="https://telly-tech.com/" class="lien-menu">
+                <span>🌐</span>
+                Telly Tech
+            </a>
+        </nav>
+         <div class="bas-barre">
+            <p>Gestion des étudiants</p>
+            <small>© 2026 UNCHK</small>
+        </div>
+
+    </aside>
+    <div class="contenu-principal">
+
+
+        <header class="en-tete">
+
+            <div>
+                <span class="etiquette-page">ESPACE ADMINISTRATION</span>
+
+                <h1>Gestion des étudiants</h1>
+
+                <p>
+                    Gérez les inscriptions et suivez les résultats des étudiants.
+                </p>
+            </div>
+
+            <div class="profil">
+                <div class="icone-profil">👩🏽‍💻</div>
+
+                <div>
+                    <strong>Administrateur</strong>
+                    <span>UNCHK</span>
+                </div>
+            </div>
+        </header>
+        <main class="conteneur">
+            <section class="section-statistiques" aria-labelledby="titre-statistiques">
+                <div class="titre-section">
+                    <div>
+                        <h2 id="titre-statistiques">Statistiques des étudiants</h2>
+                        <p>Suivez les résultats et le taux de réussite.</p>
+                    </div>
+                </div>
+
+                <div class="resume-statistiques">
+                    <article class="carte-statistique">
+                        <span class="libelle-statistique">Meilleur étudiant</span>
+                        <p id="meilleur-etudiant">--</p>
+                    </article>
+                    <article class="carte-statistique carte-taux-reussite">
+                        <span class="libelle-statistique">Taux de réussite</span>
+                        <p id="taux-reussite">0%</p>
+                    </article>
+                </div>
+
+                <section class="carte-graphique" aria-labelledby="titre-graphique">
+                    <div class="entete-graphique">
+                        <div>
+                            <h3 id="titre-graphique">Répartition des résultats</h3>
+                            <p>Étudiants admis et échoués</p>
+                        </div>
+                        <span class="indicateur-graphique">Effectifs</span>
+                    </div>
+                    <canvas
+                        id="graphique-etudiants"
+                        role="img"
+                        aria-label="Graphique de répartition des étudiants admis et échoués">
+                    </canvas>
+                </section>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+</body>
+</html>

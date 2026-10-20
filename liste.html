@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des étudiants UNCHK</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <aside class="barre-laterale">
+
+        <div class="logo">
+            <div class="icone-logo">🎓</div>
+            <div>
+                <strong>UNCHK</strong>
+                <span>Administration</span>
+            </div>
+        </div>
+
+        <button type="button" class="bouton-theme" aria-pressed="false">
+            🌙 Mode sombre
+        </button>
+
+        <nav class="menu">
+
+            <a href="index.html" class="lien-menu">
+                <span>📉</span>
+                Tableau de bord
+            </a>
+
+            <a href="ajout.html" class="lien-menu">
+                <span>➕</span>
+                Ajouter étudiant
+            </a>
+
+            <a href="liste.html" class="lien-menu actif" aria-current="page">
+                <span>👨‍🎓</span>
+                Étudiants
+            </a>
+            <a href="classe.html" class="lien-menu">
+                <span>📊</span>
+                Statistiques
+            </a>
+            <a href="https://telly-tech.com/" class="lien-menu">
+                <span>🌐</span>
+                Telly Tech
+            </a>
+
+        </nav>
+
+        <div class="bas-barre">
+            <p>Gestion des étudiants</p>
+            <small>© 2026 UNCHK</small>
+        </div>
+
+    </aside>
+
+    <div class="contenu-principal">
+
+
+        <header class="en-tete">
+
+            <div>
+                <span class="etiquette-page">ESPACE ADMINISTRATION</span>
+
+                <h1>Gestion des étudiants</h1>
+
+                <p>
+                    Gérez les inscriptions et suivez les résultats des étudiants.
+                </p>
+            </div>
+
+            <div class="profil">
+                <div class="icone-profil">👩🏽‍💻</div>
+
+                <div>
+                    <strong>Administrateur</strong>
+                    <span>UNCHK</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <main class="conteneur">
+
+
+
+            <section class="carte-contenu carte-etudiants" id="liste">
+
+                <div class="entete-liste">
+
+                    <div class="titre-carte sans-marge">
+
+                        <div class="icone-titre titre-bleu">
+                            👨‍🎓
+                        </div>
+
+                        <div>
+                            <h2>Liste des étudiants</h2>
+                            <p>
+                                Consultez et gérez les inscriptions.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="zone-recherche">
+
+                        <span>🔍</span>
+
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Rechercher un étudiant..."
+                        >
+
+                    </div>
+
+                </div>
+                <!-- Filtre combiné et tri -->
+<select id="filtre-classe">
+    <option value="">Toutes les classes</option>
+    <option value="Licence 1">Licence 1</option>
+    <option value="Licence 2">Licence 2</option>
+    <option value="Master 1">Master 1</option>
+    
+</select>
+
+<select id="filtre-statut">
+    <option value="">Tous les résultats</option>
+    <option value="admis">Admis</option>
+    <option value="echoue">Échoué</option>
+</select>
+
+<select id="tri-etudiants">
+    <option value="">Ordre par défaut</option>
+    <option value="nom">Nom A-Z</option>
+    <option value="nom-desc">Nom Z-A</option>
+    <option value="note-asc">Note croissante</option>
+    <option value="note-desc">Note décroissante</option>
+</select>
+
+<!-- Pagination -->
+<div id="pagination"></div>
+
+<!-- Confirmation personnalisée -->
+<dialog id="modal-suppression">
+    <p id="message-suppression">
+        Voulez-vous supprimer cet étudiant ?
+    </p>
+    <button type="button" id="confirmer-suppression">
+        Oui, supprimer
+    </button>
+    <button type="button" id="annuler-suppression">
+        Annuler
+    </button>
+</dialog>
+
+<!-- Modification dans une fenêtre modale -->
+<dialog id="modal-edition">
+    <h3>Modifier un étudiant</h3>
+    <form id="form-edition">
+        <input id="edition-nom" placeholder="Nom" required>
+        <input id="edition-prenom" placeholder="Prénom" required>
+        <input id="edition-email" type="email" placeholder="Email" required>
+        <input id="edition-classe" placeholder="Classe" required>
+        <input id="edition-note" type="number" min="0" max="20"
+               step="0.01" placeholder="Note" required>
+        <button type="submit">Enregistrer</button>
+        <button type="button" id="annuler-edition">Annuler</button>
+    </form>
+</dialog>
+               
+
+
+                <div class="cadre-tableau">
+
+                    <table class="tableau-etudiants">
+
+                        <thead>
+
+                            <tr>
+                                <th>Nom complet</th>
+                                <th>E-mail</th>
+                                <th>Classe</th>
+                                <th>Note</th>
+                                <th>Résultat</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tbody-etudiants"></tbody>
+
+                    </table>
+
+                </div>
+               
+<!-- Exporter les données -->
+<div class="boutons-export">
+    <button type="button" id="btn-export-csv">
+        Exporter en CSV
+    </button>
+
+    <button type="button" id="btn-export-excel">
+        Exporter en CSV pour Excel
+    </button>
+</div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>
+                © 2026 — Application de gestion des étudiants UNCHK
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
